@@ -7,15 +7,10 @@
 // Basic implementation of merge sort, in rust.
 // https://en.wikipedia.org/wiki/Merge_sort
 
-#![feature(rustc_private)]
-
 // Externals
-mod common;
-use common::NUM_VALUES;
-use common::MAX_RANGE;
-use common::print_array;
+use common::{NUM_VALUES,MAX_RANGE,print_array};
 
-extern crate rand;
+use rand;
 use rand::distributions::{IndependentSample, Range};
 use std::cmp::min;
 
@@ -75,7 +70,7 @@ fn bottom_up_merge(a: &mut [u32; NUM_VALUES], i_left: usize, i_right: usize, i_e
     }
 }
 
-fn main()
+pub fn main()
 {
     // Create the array that will contain all of our values
     let mut values: [u32; NUM_VALUES] = [0; NUM_VALUES];

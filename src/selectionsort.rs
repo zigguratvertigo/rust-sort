@@ -7,18 +7,13 @@
 // Basic implementation of selection sort, in rust.
 // https://en.wikipedia.org/wiki/Selection_sort
 
-#![feature(rustc_private)]
-
 // Externals
-mod common;
-use common::NUM_VALUES;
-use common::MAX_RANGE;
-use common::print_array;
+use common::{NUM_VALUES,MAX_RANGE,print_array};
 
-extern crate rand;
+use rand;
 use rand::distributions::{IndependentSample, Range};
 
-fn main()
+pub fn main()
 {
     // Create the array that will contain all of our values
     let mut values: [u32; NUM_VALUES] = [0; NUM_VALUES];
