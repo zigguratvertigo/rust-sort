@@ -8,13 +8,12 @@
 // https://en.wikipedia.org/wiki/Insertion_sort
 
 // Externals
-use common::{NUM_VALUES,MAX_RANGE,print_array};
+use common::{NUM_VALUES, MAX_RANGE, print_array};
 
 use rand;
 use rand::distributions::{IndependentSample, Range};
 
-pub fn main()
-{
+pub fn main() {
     // Create the array that will contain all of our values
     let mut values: [u32; NUM_VALUES] = [0; NUM_VALUES];
 
@@ -23,8 +22,7 @@ pub fn main()
     let mut rng = rand::thread_rng();
 
     // Initialize the array values to random numbers
-    for n in 0..NUM_VALUES
-    {
+    for n in 0..NUM_VALUES {
         values[n] = range.ind_sample(&mut rng);
     }
 
@@ -34,16 +32,14 @@ pub fn main()
     println!("");
 
     // Sort
-    for i in 1..NUM_VALUES
-    {
+    for i in 1..NUM_VALUES {
         let mut j = i;
 
-        while j > 0 && values[j-1] > values[j]
-        {
+        while j > 0 && values[j - 1] > values[j] {
             let val1 = values[j];
-            let val2 = values[j-1];
+            let val2 = values[j - 1];
             values[j] = val2;
-            values[j-1] = val1;
+            values[j - 1] = val1;
 
             j -= 1;
         }

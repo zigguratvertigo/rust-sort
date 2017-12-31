@@ -8,13 +8,12 @@
 // https://en.wikipedia.org/wiki/Selection_sort
 
 // Externals
-use common::{NUM_VALUES,MAX_RANGE,print_array};
+use common::{NUM_VALUES, MAX_RANGE, print_array};
 
 use rand;
 use rand::distributions::{IndependentSample, Range};
 
-pub fn main()
-{
+pub fn main() {
     // Create the array that will contain all of our values
     let mut values: [u32; NUM_VALUES] = [0; NUM_VALUES];
 
@@ -23,8 +22,7 @@ pub fn main()
     let mut rng = rand::thread_rng();
 
     // Initialize the array values to random numbers
-    for n in 0..NUM_VALUES
-    {
+    for n in 0..NUM_VALUES {
         values[n] = range.ind_sample(&mut rng);
     }
 
@@ -34,24 +32,20 @@ pub fn main()
     println!("");
 
     // Sort
-    for j in 0..NUM_VALUES-1
-    {
+    for j in 0..NUM_VALUES - 1 {
         // We begin at j
         let mut min = j;
 
         // Find the minimum in the rest of the array, starting at j+1
-        for i in j+1..NUM_VALUES
-        {
-            if values[i] < values[min]
-            {
+        for i in j + 1..NUM_VALUES {
+            if values[i] < values[min] {
                 // Found a new minimum. Keep the index
                 min = i;
             }
         }
 
         // If a minimum was found, swap it
-        if min != j
-        {
+        if min != j {
             let val1 = values[min];
             let val2 = values[j];
             values[min] = val2;
