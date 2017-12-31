@@ -14,6 +14,25 @@ use rand;
 use rand::distributions::{IndependentSample, Range};
 use std::cmp::min;
 
+pub fn sort() {
+    // Initialize the array values to random numbers
+    let mut values: Vec<u32> = (0..NUM_VALUES)
+        .map(|_| Range::new(0, MAX_RANGE).ind_sample(&mut rand::thread_rng()))
+        .collect();
+
+    // Print the original values
+    println!("Original:");
+    print_array(&values);
+    println!("");
+
+    // Sort
+    bottom_up_merge_sort(&mut values);
+
+    // Print the sorted results
+    println!("Sorted:");
+    print_array(&values);
+}
+
 // Bottom-up Merge Sort
 //
 // 1. Divide the unsorted list into n-sublists, each containing 1 element. A list of 1 element is considered sorted.
@@ -68,21 +87,3 @@ fn bottom_up_merge(a: &mut [u32], i_left: usize, i_right: usize, i_end: usize, b
     }
 }
 
-pub fn main() {
-    // Initialize the array values to random numbers
-    let mut values: Vec<u32> = (0..NUM_VALUES)
-        .map(|_| Range::new(0, MAX_RANGE).ind_sample(&mut rand::thread_rng()))
-        .collect();
-
-    // Print the original values
-    println!("Original:");
-    print_array(&values);
-    println!("");
-
-    // Sort
-    bottom_up_merge_sort(&mut values);
-
-    // Print the sorted results
-    println!("Sorted:");
-    print_array(&values);
-}

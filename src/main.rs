@@ -1,3 +1,5 @@
+#![feature(rustc_private)]
+
 extern crate rand;
 
 mod common;
@@ -8,18 +10,18 @@ mod selectionsort;
 
 fn main() {
     println!("bubblesort:");
-    bubblesort::main();
+    bubblesort::sort();
     println!("\n--------------------\n");
 
     println!("insertionsort:");
-    insertionsort::main();
+    insertionsort::sort();
     println!("\n--------------------\n");
 
     println!("mergesort:");
-    mergesort::main();
+    mergesort::sort();
     println!("\n--------------------\n");
 
     println!("selectionsort:");
-    selectionsort::main();
+    selectionsort::sort();
     println!("\n--------------------\n");
 }
