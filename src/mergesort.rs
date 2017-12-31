@@ -44,9 +44,7 @@ fn bottom_up_merge_sort(a: &mut [u32]) {
 
         // Now work array B is full of runs of length 2*width.
         // Copy array B to array A for next iteration.
-        for i in 0..len {
-            a[i] = b[i];
-        }
+        a.copy_from_slice(&b);
 
         // Now array A is full of runs of length 2*width.
 
