@@ -1,15 +1,12 @@
 //#![feature(rustc_private)]
 extern crate rand;
 
-mod common;
 mod bubblesort;
 mod insertionsort;
 mod mergesort;
 mod selectionsort;
 
 // Externals
-use common::{print_array};
-
 use rand::distributions::{IndependentSample, Range};
 
 const NUM_VALUES: usize = 10;
@@ -23,30 +20,25 @@ fn main() {
 
     // Print the original values
     println!("Original:");
-    print_array(&values);
-    println!("\n--------------------\n");
+    println!("{:?}\n", &values);
 
     println!("Bubble Sort:");
     let mut result_bubblesort: Vec<u32> = values.clone();
     bubblesort::sort(&mut result_bubblesort);
-    print_array(&result_bubblesort);
-    println!("\n--------------------\n");
+    println!("{:?}\n", &result_bubblesort);
 
     println!("Insertion Sort:");
     let mut result_insertionsort: Vec<u32> = values.clone();
     insertionsort::sort(&mut result_insertionsort);
-    print_array(&result_insertionsort);
-    println!("\n--------------------\n");
+    println!("{:?}\n", &result_insertionsort);
 
     println!("Merge Sort:");
     let mut result_mergesort: Vec<u32> = values.clone();
     mergesort::sort(&mut result_mergesort);
-    print_array(&result_mergesort);
-    println!("\n--------------------\n");
+    println!("{:?}\n", &result_mergesort);
 
     println!("Selection Sort:");
     let mut result_selectionsort: Vec<u32> = values.clone();
     selectionsort::sort(&mut result_selectionsort);
-    print_array(&result_selectionsort);
-    println!("\n--------------------\n");
+    println!("{:?}\n", &result_selectionsort);
 }
