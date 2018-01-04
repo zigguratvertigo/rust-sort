@@ -7,26 +7,10 @@
 // Basic implementation of bubble sort, in rust.
 // https://en.wikipedia.org/wiki/Bubble_sort
 
-// Externals
-use common::{NUM_VALUES, MAX_RANGE, print_array};
-
-use rand;
-use rand::distributions::{IndependentSample, Range};
-
-pub fn sort() {
-    // Initialize the array values to random numbers
-    let mut values: Vec<u32> = (0..NUM_VALUES)
-        .map(|_| Range::new(0, MAX_RANGE).ind_sample(&mut rand::thread_rng()))
-        .collect();
-
-    // Print the original values
-    println!("Original:");
-    print_array(&values);
-    println!("");
-
+pub fn sort(values: &mut[u32]) {
     // Sort
-    for _ in 0..NUM_VALUES {
-        for j in 1..NUM_VALUES {
+    for _ in 0..values.len() {
+        for j in 1..values.len() {
             // if next value is bigger than previous, swap
             if values[j - 1] > values[j] {
                 let val1 = values[j - 1];
@@ -37,8 +21,4 @@ pub fn sort() {
             }
         }
     }
-
-    // Print the sorted results
-    println!("Sorted:");
-    print_array(&values);
 }
