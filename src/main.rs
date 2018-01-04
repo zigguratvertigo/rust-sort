@@ -46,7 +46,7 @@ fn main() {
 
     println!("Selection Sort:");
     let mut result_selectionsort: Vec<u32> = values.clone();
-    mergesort::sort(&mut result_selectionsort);
+    selectionsort::sort(&mut result_selectionsort);
     print_array(&result_selectionsort);
     println!("\n--------------------\n");
 }
