@@ -5,7 +5,7 @@ mod common;
 mod bubblesort;
 mod insertionsort;
 mod mergesort;
-// mod selectionsort;
+mod selectionsort;
 
 // Externals
 use common::{print_array};
@@ -42,5 +42,11 @@ fn main() {
     let mut result_mergesort: Vec<u32> = values.clone();
     mergesort::sort(&mut result_mergesort);
     print_array(&result_mergesort);
+    println!("\n--------------------\n");
+
+    println!("Selection Sort:");
+    let mut result_selectionsort: Vec<u32> = values.clone();
+    mergesort::sort(&mut result_selectionsort);
+    print_array(&result_selectionsort);
     println!("\n--------------------\n");
 }
