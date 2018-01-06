@@ -13,11 +13,9 @@ pub fn sort(values: &mut[u32]) {
         for j in 1..values.len() {
             // if next value is bigger than previous, swap
             if values[j - 1] > values[j] {
-                let val1 = values[j - 1];
-                let val2 = values[j];
-
-                values[j - 1] = val2;
-                values[j] = val1;
+                let tmp = values[j - 1];
+                values[j - 1] = values[j];
+                values[j] = tmp;
             }
         }
     }

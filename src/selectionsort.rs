@@ -23,10 +23,9 @@ pub fn sort(values: &mut [u32]) {
 
         // If a minimum was found, swap it
         if min != j {
-            let val1 = values[min];
-            let val2 = values[j];
-            values[min] = val2;
-            values[j] = val1;
+            let tmp = values[min];
+            values[min] = values[j];
+            values[j] = tmp;
         }
     }
 }

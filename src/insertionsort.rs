@@ -13,10 +13,9 @@ pub fn sort(values: &mut[u32]) {
         let mut j = i;
 
         while j > 0 && values[j - 1] > values[j] {
-            let val1 = values[j];
-            let val2 = values[j - 1];
-            values[j] = val2;
-            values[j - 1] = val1;
+            let tmp = values[j - 1];
+            values[j - 1] = values[j];
+            values[j] = tmp;
 
             j -= 1;
         }
