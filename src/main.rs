@@ -5,6 +5,7 @@ mod bubblesort;
 mod insertionsort;
 mod mergesort;
 mod selectionsort;
+mod quicksort;
 
 // Externals
 use rand::distributions::{IndependentSample, Range};
@@ -41,4 +42,9 @@ fn main() {
     let mut result_selectionsort: Vec<u32> = values.clone();
     selectionsort::sort(&mut result_selectionsort);
     println!("{:?}\n", &result_selectionsort);
+
+    println!("Quick Sort:");
+    let mut result_quicksort: Vec<u32> = values.clone();
+    quicksort::sort(&mut result_quicksort);
+    println!("{:?}\n", &result_quicksort);
 }

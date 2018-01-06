@@ -18,3 +18,5 @@ src/selectionsort
 src/mergesort
 
 src/main
+
+src/quicksort
