@@ -1,5 +1,8 @@
 # rust-sort
 
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+[![Build Status](https://travis-ci.org/zigguratvertigo/rust-sort.svg?branch=master)](https://travis-ci.org/zigguratvertigo/rust-sort)
+
 A myriad of sorting algorithms implemented in rust.
 
 ## Sorting Algorithms
