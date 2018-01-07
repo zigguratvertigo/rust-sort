@@ -6,6 +6,7 @@ mod insertionsort;
 mod mergesort;
 mod selectionsort;
 mod quicksort;
+mod heapsort;
 
 // Externals
 use rand::distributions::{IndependentSample, Range};
@@ -47,6 +48,11 @@ fn main() {
     let mut result_quicksort: Vec<u32> = values.clone();
     quicksort::sort(&mut result_quicksort);
     println!("{:?}\n", &result_quicksort);
+
+    println!("Heap Sort:");
+    let mut result_heapsort: Vec<u32> = values.clone();
+    heapsort::sort(&mut result_heapsort);
+    println!("{:?}\n", &result_heapsort);
 }
 
 #[test]
@@ -71,9 +77,13 @@ fn sort_results_match() {
     let mut result_quicksort: Vec<u32> = values.clone();
     quicksort::sort(&mut result_quicksort);
 
+    let mut result_heapsort: Vec<u32> = values.clone();
+    heapsort::sort(&mut result_heapsort);
+
     // test results by transitivity (A == B == C == D)
     assert!(result_bubblesort == result_insertionsort);
     assert!(result_insertionsort == result_mergesort);
     assert!(result_mergesort == result_selectionsort);
     assert!(result_selectionsort == result_quicksort);
+    assert!(result_quicksort == result_heapsort);
 }

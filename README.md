@@ -11,6 +11,7 @@ A myriad of sorting algorithms implemented in rust.
 - [Insertion Sort](https://github.com/zigguratvertigo/rust-sort/blob/master/src/insertionsort.rs)
 - [Merge Sort](https://github.com/zigguratvertigo/rust-sort/blob/master/src/mergesort.rs)
 - [Quick Sort](https://github.com/zigguratvertigo/rust-sort/blob/master/src/quicksort.rs)
+- [Heap Sort](https://github.com/zigguratvertigo/rust-sort/blob/master/src/heapsort.rs)
 
 ## Notes
 
