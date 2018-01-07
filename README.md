@@ -16,4 +16,6 @@ A myriad of sorting algorithms implemented in rust.
 
 ## Notes
 
-This repository was created merely as a learning exercise. Implementations can definitely be improved. Feedback / PRs appreciated! :)
+This repository was created merely as a learning exercise. The sorting algorithms found here have been implemented in a simple, easy to understand form.
+
+Implementations can be definitely improved. Feedback / PRs appreciated too! :)
