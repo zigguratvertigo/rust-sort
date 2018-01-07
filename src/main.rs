@@ -3,6 +3,7 @@ extern crate rand;
 
 mod bubblesort;
 mod insertionsort;
+mod shellsort;
 mod mergesort;
 mod selectionsort;
 mod quicksort;
@@ -33,6 +34,11 @@ fn main() {
     let mut result_insertionsort: Vec<u32> = values.clone();
     insertionsort::sort(&mut result_insertionsort);
     println!("{:?}\n", &result_insertionsort);
+
+    println!("Shell Sort:");
+    let mut result_shellsort: Vec<u32> = values.clone();
+    shellsort::sort(&mut result_shellsort);
+    println!("{:?}\n", &result_shellsort);
 
     println!("Merge Sort:");
     let mut result_mergesort: Vec<u32> = values.clone();
@@ -68,6 +74,9 @@ fn sort_results_match() {
     let mut result_insertionsort: Vec<u32> = values.clone();
     insertionsort::sort(&mut result_insertionsort);
 
+    let mut result_shellsort: Vec<u32> = values.clone();
+    shellsort::sort(&mut result_shellsort);
+
     let mut result_mergesort: Vec<u32> = values.clone();
     mergesort::sort(&mut result_mergesort);
 
@@ -82,7 +91,8 @@ fn sort_results_match() {
 
     // test results by transitivity (A == B == C == D)
     assert!(result_bubblesort == result_insertionsort);
-    assert!(result_insertionsort == result_mergesort);
+    assert!(result_insertionsort == result_shellsort);
+    assert!(result_shellsort == result_mergesort);
     assert!(result_mergesort == result_selectionsort);
     assert!(result_selectionsort == result_quicksort);
     assert!(result_quicksort == result_heapsort);
